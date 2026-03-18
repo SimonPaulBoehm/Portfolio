@@ -1,3 +1,4 @@
+
 *,
 *::before,
 *::after {
@@ -26,7 +27,7 @@ html {
 body {
     background: var(--bg);
     color: var(--text);
-    font-family: "Syne", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     overflow-x: hidden;
     cursor: none;
 }
@@ -97,7 +98,7 @@ nav::after {
     z-index: -1;
 }
 .nav-logo {
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 14px;
     color: var(--accent2);
     letter-spacing: 0.1em;
@@ -148,141 +149,11 @@ nav::after {
     overflow: hidden;
 }
 
-.hero-grid {
+.hero-canvas {
     position: absolute;
     inset: 0;
-    background-image:
-        linear-gradient(
-            rgba(108, 99, 255, 0.06) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(108, 99, 255, 0.06) 1px,
-            transparent 1px
-        );
-    background-size: 60px 60px;
-    animation: gridPulse 8s ease-in-out infinite;
-}
-@keyframes gridPulse {
-    0%,
-    100% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-.orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    animation: orbFloat linear infinite;
-    pointer-events: none;
-}
-.orb-1 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(
-        circle,
-        rgba(108, 99, 255, 0.25),
-        transparent 70%
-    );
-    top: -100px;
-    right: -100px;
-    animation-duration: 20s;
-    animation-name: orbFloat1;
-}
-.orb-2 {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(
-        circle,
-        rgba(0, 229, 255, 0.15),
-        transparent 70%
-    );
-    bottom: 50px;
-    left: -80px;
-    animation-duration: 15s;
-    animation-name: orbFloat2;
-}
-.orb-3 {
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(
-        circle,
-        rgba(255, 107, 107, 0.12),
-        transparent 70%
-    );
-    top: 40%;
-    left: 40%;
-    animation-duration: 25s;
-    animation-name: orbFloat3;
-}
-@keyframes orbFloat1 {
-    0%,
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-    33% {
-        transform: translate(-40px, 60px) scale(1.1);
-    }
-    66% {
-        transform: translate(30px, -30px) scale(0.95);
-    }
-}
-@keyframes orbFloat2 {
-    0%,
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-    50% {
-        transform: translate(60px, -40px) scale(1.15);
-    }
-}
-@keyframes orbFloat3 {
-    0%,
-    100% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-    }
-    25% {
-        transform: translate(30px, -50px) scale(1.05) rotate(90deg);
-    }
-    75% {
-        transform: translate(-20px, 30px) scale(0.9) rotate(270deg);
-    }
-}
-
-.scanline {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(0, 229, 255, 0.3),
-        transparent
-    );
-    animation: scan 6s linear infinite;
-    pointer-events: none;
-}
-@keyframes scan {
-    from {
-        top: -2px;
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    to {
-        top: 100%;
-        opacity: 0;
-    }
+    width: 100%;
+    height: 100%;
 }
 
 .hero-content {
@@ -292,7 +163,7 @@ nav::after {
 }
 
 .hero-tag {
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 12px;
     color: var(--accent2);
     letter-spacing: 0.2em;
@@ -312,11 +183,11 @@ nav::after {
 }
 
 .hero-name {
-    font-family: "Syne", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: clamp(56px, 9vw, 120px);
     font-weight: 800;
-    line-height: 0.92;
-    letter-spacing: -0.03em;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
     margin-bottom: 8px;
     animation: fadeUp 0.8s ease 0.55s both;
 }
@@ -347,19 +218,18 @@ nav::after {
 }
 
 .hero-role {
-    font-family: "Fraunces", serif;
-    font-style: italic;
-    font-size: clamp(18px, 2.5vw, 28px);
-    font-weight: 300;
+    font-size: clamp(17px, 2.2vw, 24px);
+    font-weight: 400;
     color: var(--muted);
+    line-height: 1.65;
     margin: 28px 0 40px;
     animation: fadeUp 0.8s ease 0.7s both;
 }
 .hero-role .highlight {
     color: var(--accent);
     font-style: normal;
-    font-family: "Syne", sans-serif;
-    font-weight: 600;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
 }
 
 .hero-cta {
@@ -373,10 +243,10 @@ nav::after {
     padding: 14px 32px;
     background: var(--accent);
     color: white;
-    font-family: "Syne", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     text-decoration: none;
     border-radius: 4px;
     position: relative;
@@ -426,10 +296,10 @@ nav::after {
     padding: 14px 32px;
     border: 1px solid var(--border);
     color: var(--text);
-    font-family: "Syne", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     text-decoration: none;
     border-radius: 4px;
     transition:
@@ -501,7 +371,7 @@ nav::after {
     color: var(--accent);
 }
 .stat-label {
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 10px;
     color: var(--muted);
     letter-spacing: 0.15em;
@@ -521,7 +391,7 @@ nav::after {
     animation: fadeUp 0.8s ease 1.5s both;
 }
 .scroll-text {
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 10px;
     letter-spacing: 0.2em;
     color: var(--muted);
@@ -555,7 +425,7 @@ nav::after {
     position: relative;
 }
 .section-label {
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 11px;
     color: var(--accent);
     letter-spacing: 0.25em;
@@ -590,23 +460,21 @@ nav::after {
     margin-top: 60px;
 }
 .about-text {
-    font-family: "Fraunces", serif;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 1.7;
-    color: rgba(232, 232, 240, 0.75);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba(232, 232, 240, 0.7);
 }
 .about-text p + p {
     margin-top: 20px;
 }
 .about-text strong {
     color: var(--text);
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 600;
 }
 
 .stack-label {
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 11px;
     color: var(--accent2);
     letter-spacing: 0.15em;
@@ -624,7 +492,7 @@ nav::after {
     border: 1px solid var(--border);
     border-radius: 6px;
     padding: 14px 18px;
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 12px;
     color: var(--muted);
     letter-spacing: 0.05em;
@@ -729,7 +597,7 @@ nav::after {
 }
 
 .project-num {
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 11px;
     color: var(--accent);
     letter-spacing: 0.15em;
@@ -768,7 +636,7 @@ nav::after {
     z-index: 1;
 }
 .tag {
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 10px;
     padding: 4px 10px;
     border-radius: 3px;
@@ -797,6 +665,53 @@ nav::after {
 }
 .project-link:hover {
     gap: 12px;
+}
+
+/* Evervault hover overlay */
+.card-ev-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+.project-card:hover .card-ev-overlay {
+    opacity: 1;
+}
+.card-ev-gradient {
+    position: absolute;
+    inset: 0;
+    opacity: 0.18;
+    -webkit-mask-image: radial-gradient(220px at var(--ev-x, 50%) var(--ev-y, 50%), white, transparent);
+    mask-image: radial-gradient(220px at var(--ev-x, 50%) var(--ev-y, 50%), white, transparent);
+}
+.project-card:nth-child(1) .card-ev-gradient {
+    background: linear-gradient(135deg, #6c63ff, #00e5ff);
+}
+.project-card:nth-child(2) .card-ev-gradient {
+    background: linear-gradient(135deg, #00e5ff, #6c63ff);
+}
+.project-card:nth-child(3) .card-ev-gradient {
+    background: linear-gradient(135deg, #ff6b6b, #6c63ff);
+}
+.card-ev-noise {
+    position: absolute;
+    inset: 0;
+    padding: 10px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.45;
+    word-break: break-all;
+    overflow: hidden;
+    -webkit-mask-image: radial-gradient(220px at var(--ev-x, 50%) var(--ev-y, 50%), white, transparent);
+    mask-image: radial-gradient(220px at var(--ev-x, 50%) var(--ev-y, 50%), white, transparent);
+    mix-blend-mode: overlay;
+    user-select: none;
 }
 
 .timeline {
@@ -840,7 +755,7 @@ nav::after {
     box-shadow: 0 0 20px var(--glow);
 }
 .exp-meta {
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 11px;
     color: var(--accent2);
     letter-spacing: 0.1em;
@@ -878,12 +793,11 @@ nav::after {
     display: none;
 }
 .contact-subtitle {
-    font-family: "Fraunces", serif;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 17px;
+    font-weight: 400;
     color: var(--muted);
     margin: 20px 0 48px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 .contact-links {
     display: flex;
@@ -900,7 +814,7 @@ nav::after {
     border-radius: 6px;
     text-decoration: none;
     color: var(--muted);
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 13px;
     letter-spacing: 0.05em;
     transition: all 0.3s;
@@ -921,7 +835,7 @@ footer {
     align-items: center;
 }
 .footer-copy {
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 11px;
     color: var(--muted);
     letter-spacing: 0.08em;
@@ -1002,7 +916,7 @@ footer {
     right: 48px;
     top: 50%;
     transform: translateY(-40%);
-    font-family: "DM Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 11px;
     color: rgba(108, 99, 255, 0.15);
     line-height: 1.8;
@@ -1040,37 +954,134 @@ footer {
     }
 }
 
-@media (max-width: 1100px) {
-    .hero-stats {
-        display: none;
-    }
-    .projects-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+/* Hamburger button */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 201;
 }
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--text);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+@media (max-width: 1100px) {
+    .hero-stats { display: none; }
+    .projects-grid { grid-template-columns: 1fr 1fr; }
+}
+
 @media (max-width: 768px) {
-    nav {
-        padding: 20px 24px;
-    }
+    /* Nav */
+    nav { padding: 20px 24px; }
+    .nav-toggle { display: flex; }
     .nav-links {
-        display: none;
-    }
-    .hero {
-        padding: 100px 24px 80px;
-    }
-    .section {
-        padding: 80px 24px;
-    }
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    footer {
-        padding: 24px;
+        position: fixed;
+        inset: 0;
+        background: rgba(5, 5, 10, 0.97);
+        backdrop-filter: blur(12px);
         flex-direction: column;
-        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        gap: 36px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 150;
     }
+    .nav-links.open { opacity: 1; pointer-events: all; }
+    .nav-links li { list-style: none; }
+    .nav-links a { font-size: 24px; letter-spacing: 0.1em; color: var(--text); }
+    .nav-links a::after { display: none; }
+
+    /* Hero — content top-aligned after nav, waves fill remaining space */
+    .hero {
+        min-height: 100svh;
+        padding: 96px 28px 60px;
+        align-items: flex-start;
+    }
+    .hero-content { max-width: 100%; }
+    .hero-tag { font-size: 10px; letter-spacing: 0.14em; margin-bottom: 18px; }
+    .hero-name {
+        font-size: clamp(54px, 16vw, 80px);
+        letter-spacing: -0.03em;
+        line-height: 0.9;
+        margin-bottom: 20px;
+    }
+    .hero-role {
+        font-size: 17px;
+        line-height: 1.65;
+        margin: 0 0 32px;
+    }
+    .hero-role br { display: none; }
+    .hero-cta { flex-direction: column; align-items: stretch; gap: 12px; }
+    .btn-primary, .btn-ghost {
+        text-align: center;
+        justify-content: center;
+        padding: 16px 24px;
+    }
+    .scroll-hint { display: none; }
+
+    /* Sections */
+    .section { padding: 64px 24px; }
+    .section-title {
+        font-size: clamp(28px, 7vw, 42px);
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+    }
+    .section-title br { display: none; }
+
+    /* About */
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .about-text { font-size: 16px; line-height: 1.7; }
+    .skills-list { grid-template-columns: 1fr 1fr; }
+
+    /* Projects */
+    .projects-grid { grid-template-columns: 1fr; }
+    .projects-section { padding: 64px 24px; }
+    .project-card { padding: 24px; }
+
+    /* Experience */
+    .timeline { margin-top: 36px; }
+    .timeline-item { padding-left: 28px; margin-bottom: 36px; }
+    .exp-title { font-size: 17px; }
+    .exp-company { font-size: 14px; }
+
+    /* Contact */
+    .contact-section { padding: 64px 24px; }
+    .contact-section .section-title { font-size: clamp(24px, 6.5vw, 34px); }
+    .contact-subtitle { font-size: 15px; margin: 16px 0 36px; }
+    .contact-links { flex-direction: column; align-items: stretch; gap: 10px; }
+    .contact-link {
+        justify-content: flex-start;
+        font-size: 11px;
+        padding: 14px 18px;
+        overflow: hidden;
+        word-break: break-all;
+    }
+
+    /* Footer */
+    footer { padding: 24px; flex-direction: column; gap: 6px; text-align: center; }
+}
+
+@media (max-width: 430px) {
+    .hero { padding: 88px 20px 48px; }
+    .hero-name { font-size: clamp(50px, 17vw, 66px); }
+    .hero-role { font-size: 16px; }
+    .section { padding: 56px 20px; }
+    .projects-section, .contact-section { padding: 56px 20px; }
+    .section-title { font-size: clamp(26px, 7.5vw, 36px); }
+    .contact-section .section-title { font-size: clamp(22px, 7vw, 30px); }
 }
